@@ -7,8 +7,13 @@
 
 import Cocoa
 import Quartz
+import ZIPFoundation
 
 class PreviewViewController: NSViewController, QLPreviewingController {
+    
+    enum PreviewError: Error {
+        case fileOpenFailed
+    }
     
     override var nibName: NSNib.Name? {
         return NSNib.Name("PreviewViewController")
@@ -21,12 +26,25 @@ class PreviewViewController: NSViewController, QLPreviewingController {
     
     func preparePreviewOfFile(at url: URL, completionHandler handler: @escaping (Error?) -> Void) {
         
-        // Add the supported content types to the QLSupportedContentTypes array in the Info.plist of the extension.
+        // 読み取りモードでアーカイブを開く
+        guard let archive = Archive(url: url, accessMode: .read) else {
+            handler(PreviewError.fileOpenFailed)
+            return
+        }
         
-        // Perform any setup necessary in order to prepare the view.
+        // アーカイブ内の各エントリのパスを取得
+        let entryPaths: [URL] = archive.map{entry in
+            let pathStr = entry.path(using: .utf8)
+            if #available(macOS 13, *) {
+                return .init(filePath: pathStr)
+            } else {
+                return .init(fileURLWithPath: pathStr)
+            }
+        }
         
-        // Call the completion handler so Quick Look knows that the preview is fully loaded.
-        // Quick Look will display a loading spinner while the completion handler is not called.
+        for (index, entryPath) in entryPaths.enumerated() {
+            NSLog("entry %d: %@", index, entryPath.absoluteString)
+        }
         
         handler(nil)
     }

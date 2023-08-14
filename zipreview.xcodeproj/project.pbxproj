@@ -11,11 +11,11 @@
 		9E054C892A8A148F008B8C69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E054C882A8A148F008B8C69 /* ViewController.swift */; };
 		9E054C8B2A8A1492008B8C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E054C8A2A8A1492008B8C69 /* Assets.xcassets */; };
 		9E054C8E2A8A1492008B8C69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E054C8C2A8A1492008B8C69 /* Main.storyboard */; };
-		9E39C2962A8A17930056E14D /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2952A8A17930056E14D /* ZIPFoundation */; };
 		9E39C2CB2A8A19850056E14D /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E39C2CA2A8A19850056E14D /* Quartz.framework */; };
 		9E39C2CE2A8A19850056E14D /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E39C2CD2A8A19850056E14D /* PreviewViewController.swift */; };
 		9E39C2D32A8A19850056E14D /* PreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E39C2D12A8A19850056E14D /* PreviewViewController.xib */; };
 		9E39C2D82A8A19850056E14D /* ql-extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9E39C2C82A8A19850056E14D /* ql-extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9E39C2DE2A8A25F90056E14D /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2DD2A8A25F90056E14D /* ZIPFoundation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E39C2962A8A17930056E14D /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E39C2CB2A8A19850056E14D /* Quartz.framework in Frameworks */,
+				9E39C2DE2A8A25F90056E14D /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +146,6 @@
 			);
 			name = zipreview;
 			packageProductDependencies = (
-				9E39C2952A8A17930056E14D /* ZIPFoundation */,
 			);
 			productName = zipreview;
 			productReference = 9E054C832A8A148F008B8C69 /* zipreview.app */;
@@ -165,6 +164,9 @@
 			dependencies = (
 			);
 			name = "ql-extension";
+			packageProductDependencies = (
+				9E39C2DD2A8A25F90056E14D /* ZIPFoundation */,
+			);
 			productName = "ql-extension";
 			productReference = 9E39C2C82A8A19850056E14D /* ql-extension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -546,7 +548,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9E39C2952A8A17930056E14D /* ZIPFoundation */ = {
+		9E39C2DD2A8A25F90056E14D /* ZIPFoundation */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9E39C2942A8A17930056E14D /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
 			productName = ZIPFoundation;
