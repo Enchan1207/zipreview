@@ -14,19 +14,20 @@ extension PreviewViewController: NSOutlineViewDataSource {
     // アイテムが含む子アイテムの数を返す
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         // TODO: アイテム見て決める
-        return 5
+        return (item == nil) ? 5 : 3
     }
     
     // 親アイテムに対する小アイテムの情報を返す
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         // TODO: アイテム見て決める
-        return []
+        return (item == nil) ? (2 * index + 1) : (2 * (index + 1))
     }
     
     // 展開可能かどうか
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         // TODO: アイテム見て決める
-        return false
+        guard let itemID = item as? Int else {return false}
+        return (itemID % 2) != 0
     }
     
     // グループアイテムかどうか
