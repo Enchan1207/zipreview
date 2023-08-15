@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "instantiate",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tarunon/Instantiate",
+      "state" : {
+        "revision" : "5652b7deb45e4826dab31fa67336c1f9649e42c2",
+        "version" : "4.0.1"
+      }
+    },
+    {
       "identity" : "zipfoundation#license",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/weichsel/ZIPFoundation#license",
