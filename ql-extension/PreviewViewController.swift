@@ -66,7 +66,7 @@ class PreviewViewController: NSViewController, QLPreviewingController {
             self?.rootNode.appendChild(pathcomponents: pathComponents, kind: .init(entrytype: entry.type))
         }
         
-        // TODO: viewを更新
+        outlineView.reloadData()
         
         handler(nil)
     }
