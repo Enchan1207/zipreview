@@ -15,6 +15,12 @@
 		9E39C2CE2A8A19850056E14D /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E39C2CD2A8A19850056E14D /* PreviewViewController.swift */; };
 		9E39C2D32A8A19850056E14D /* PreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E39C2D12A8A19850056E14D /* PreviewViewController.xib */; };
 		9E39C2D82A8A19850056E14D /* ql-extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9E39C2C82A8A19850056E14D /* ql-extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9E39C2E02A8A5FB90056E14D /* PreviewVC+OutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E39C2DF2A8A5FB90056E14D /* PreviewVC+OutlineView.swift */; };
+		9E39C2E72A8A666B0056E14D /* OutlineCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E39C2E62A8A666B0056E14D /* OutlineCellView.swift */; };
+		9E39C2E92A8A670F0056E14D /* OutlineCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E39C2E82A8A670F0056E14D /* OutlineCellView.xib */; };
+		9E39C2F02A8B19720056E14D /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2EF2A8B19720056E14D /* ZIPFoundation */; };
+		9E39C2F22A8B19720056E14D /* Instantiate in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2F12A8B19720056E14D /* Instantiate */; };
+		9E39C2F42A8B19720056E14D /* InstantiateStandard in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2F32A8B19720056E14D /* InstantiateStandard */; };
 		9E39C2DE2A8A25F90056E14D /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2DD2A8A25F90056E14D /* ZIPFoundation */; };
 		9E8ABD522A8D8CE300D4860B /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8ABD512A8D8CE300D4860B /* Node.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +62,9 @@
 		9E39C2D22A8A19850056E14D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreviewViewController.xib; sourceTree = "<group>"; };
 		9E39C2D42A8A19850056E14D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E39C2D52A8A19850056E14D /* ql_extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ql_extension.entitlements; sourceTree = "<group>"; };
+		9E39C2DF2A8A5FB90056E14D /* PreviewVC+OutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewVC+OutlineView.swift"; sourceTree = "<group>"; };
+		9E39C2E62A8A666B0056E14D /* OutlineCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineCellView.swift; sourceTree = "<group>"; };
+		9E39C2E82A8A670F0056E14D /* OutlineCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutlineCellView.xib; sourceTree = "<group>"; };
 		9E8ABD512A8D8CE300D4860B /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,8 +80,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E39C2F42A8B19720056E14D /* InstantiateStandard in Frameworks */,
 				9E39C2CB2A8A19850056E14D /* Quartz.framework in Frameworks */,
-				9E39C2DE2A8A25F90056E14D /* ZIPFoundation in Frameworks */,
+				9E39C2F02A8B19720056E14D /* ZIPFoundation in Frameworks */,
+				9E39C2F22A8B19720056E14D /* Instantiate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,13 +132,24 @@
 		9E39C2CC2A8A19850056E14D /* ql-extension */ = {
 			isa = PBXGroup;
 			children = (
+				9E39C2E12A8A64F60056E14D /* View */,
 				9E39C2CD2A8A19850056E14D /* PreviewViewController.swift */,
+				9E39C2DF2A8A5FB90056E14D /* PreviewVC+OutlineView.swift */,
 				9E8ABD512A8D8CE300D4860B /* Node.swift */,
 				9E39C2D12A8A19850056E14D /* PreviewViewController.xib */,
 				9E39C2D42A8A19850056E14D /* Info.plist */,
 				9E39C2D52A8A19850056E14D /* ql_extension.entitlements */,
 			);
 			path = "ql-extension";
+			sourceTree = "<group>";
+		};
+		9E39C2E12A8A64F60056E14D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9E39C2E62A8A666B0056E14D /* OutlineCellView.swift */,
+				9E39C2E82A8A670F0056E14D /* OutlineCellView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +190,9 @@
 			);
 			name = "ql-extension";
 			packageProductDependencies = (
-				9E39C2DD2A8A25F90056E14D /* ZIPFoundation */,
+				9E39C2EF2A8B19720056E14D /* ZIPFoundation */,
+				9E39C2F12A8B19720056E14D /* Instantiate */,
+				9E39C2F32A8B19720056E14D /* InstantiateStandard */,
 			);
 			productName = "ql-extension";
 			productReference = 9E39C2C82A8A19850056E14D /* ql-extension.appex */;
@@ -203,6 +227,7 @@
 			mainGroup = 9E054C7A2A8A148F008B8C69;
 			packageReferences = (
 				9E39C2942A8A17930056E14D /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+				9E39C2EA2A8B195F0056E14D /* XCRemoteSwiftPackageReference "Instantiate" */,
 			);
 			productRefGroup = 9E054C842A8A148F008B8C69 /* Products */;
 			projectDirPath = "";
@@ -229,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E39C2D32A8A19850056E14D /* PreviewViewController.xib in Resources */,
+				9E39C2E92A8A670F0056E14D /* OutlineCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E39C2E72A8A666B0056E14D /* OutlineCellView.swift in Sources */,
 				9E39C2CE2A8A19850056E14D /* PreviewViewController.swift in Sources */,
+				9E39C2E02A8A5FB90056E14D /* PreviewVC+OutlineView.swift in Sources */,
 				9E8ABD522A8D8CE300D4860B /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,13 +577,31 @@
 				minimumVersion = 0.9.16;
 			};
 		};
+		9E39C2EA2A8B195F0056E14D /* XCRemoteSwiftPackageReference "Instantiate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tarunon/Instantiate";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9E39C2DD2A8A25F90056E14D /* ZIPFoundation */ = {
+		9E39C2EF2A8B19720056E14D /* ZIPFoundation */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9E39C2942A8A17930056E14D /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
 			productName = ZIPFoundation;
+		};
+		9E39C2F12A8B19720056E14D /* Instantiate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E39C2EA2A8B195F0056E14D /* XCRemoteSwiftPackageReference "Instantiate" */;
+			productName = Instantiate;
+		};
+		9E39C2F32A8B19720056E14D /* InstantiateStandard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E39C2EA2A8B195F0056E14D /* XCRemoteSwiftPackageReference "Instantiate" */;
+			productName = InstantiateStandard;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

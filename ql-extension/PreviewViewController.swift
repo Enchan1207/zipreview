@@ -21,6 +21,22 @@ class PreviewViewController: NSViewController, QLPreviewingController {
     override var nibName: NSNib.Name? {
         return NSNib.Name("PreviewViewController")
     }
+    
+    @IBOutlet weak var outlineView: NSOutlineView! {
+        didSet{
+            outlineView.delegate = self
+            outlineView.dataSource = self
+            
+            outlineView.autosaveExpandedItems = false
+            outlineView.autosaveTableColumns = false
+            
+            outlineView.selectionHighlightStyle = .regular
+            outlineView.floatsGroupRows = false
+            
+            outlineView.register(OutlineCellView.nib, forIdentifier: .init(rawValue: .init(describing: OutlineCellView.self)))
+        }
+    }
+    
 
     override func loadView() {
         super.loadView()
