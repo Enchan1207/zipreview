@@ -16,6 +16,7 @@
 		9E39C2D32A8A19850056E14D /* PreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E39C2D12A8A19850056E14D /* PreviewViewController.xib */; };
 		9E39C2D82A8A19850056E14D /* ql-extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9E39C2C82A8A19850056E14D /* ql-extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9E39C2DE2A8A25F90056E14D /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2DD2A8A25F90056E14D /* ZIPFoundation */; };
+		9E8ABD522A8D8CE300D4860B /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8ABD512A8D8CE300D4860B /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		9E39C2D22A8A19850056E14D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreviewViewController.xib; sourceTree = "<group>"; };
 		9E39C2D42A8A19850056E14D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E39C2D52A8A19850056E14D /* ql_extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ql_extension.entitlements; sourceTree = "<group>"; };
+		9E8ABD512A8D8CE300D4860B /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				9E39C2CD2A8A19850056E14D /* PreviewViewController.swift */,
+				9E8ABD512A8D8CE300D4860B /* Node.swift */,
 				9E39C2D12A8A19850056E14D /* PreviewViewController.xib */,
 				9E39C2D42A8A19850056E14D /* Info.plist */,
 				9E39C2D52A8A19850056E14D /* ql_extension.entitlements */,
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E39C2CE2A8A19850056E14D /* PreviewViewController.swift in Sources */,
+				9E8ABD522A8D8CE300D4860B /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
