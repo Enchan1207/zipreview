@@ -21,6 +21,8 @@
 		9E39C2F02A8B19720056E14D /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2EF2A8B19720056E14D /* ZIPFoundation */; };
 		9E39C2F22A8B19720056E14D /* Instantiate in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2F12A8B19720056E14D /* Instantiate */; };
 		9E39C2F42A8B19720056E14D /* InstantiateStandard in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2F32A8B19720056E14D /* InstantiateStandard */; };
+		9E39C2DE2A8A25F90056E14D /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2DD2A8A25F90056E14D /* ZIPFoundation */; };
+		9E8ABD522A8D8CE300D4860B /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8ABD512A8D8CE300D4860B /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,7 @@
 		9E39C2DF2A8A5FB90056E14D /* PreviewVC+OutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewVC+OutlineView.swift"; sourceTree = "<group>"; };
 		9E39C2E62A8A666B0056E14D /* OutlineCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineCellView.swift; sourceTree = "<group>"; };
 		9E39C2E82A8A670F0056E14D /* OutlineCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutlineCellView.xib; sourceTree = "<group>"; };
+		9E8ABD512A8D8CE300D4860B /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,7 @@
 				9E39C2E12A8A64F60056E14D /* View */,
 				9E39C2CD2A8A19850056E14D /* PreviewViewController.swift */,
 				9E39C2DF2A8A5FB90056E14D /* PreviewVC+OutlineView.swift */,
+				9E8ABD512A8D8CE300D4860B /* Node.swift */,
 				9E39C2D12A8A19850056E14D /* PreviewViewController.xib */,
 				9E39C2D42A8A19850056E14D /* Info.plist */,
 				9E39C2D52A8A19850056E14D /* ql_extension.entitlements */,
@@ -273,6 +277,7 @@
 				9E39C2E72A8A666B0056E14D /* OutlineCellView.swift in Sources */,
 				9E39C2CE2A8A19850056E14D /* PreviewViewController.swift in Sources */,
 				9E39C2E02A8A5FB90056E14D /* PreviewVC+OutlineView.swift in Sources */,
+				9E8ABD522A8D8CE300D4860B /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
