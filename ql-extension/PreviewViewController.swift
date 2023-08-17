@@ -55,10 +55,11 @@ class PreviewViewController: NSViewController, QLPreviewingController {
         archive.forEach { [weak self] entry in
             // zipファイルをルートとする相対パスを取得
             let relativeEntryURL: URL
+            let entryPathStr = entry.path(using: .utf8)
             if #available(macOS 13, *) {
-                relativeEntryURL = .init(filePath: entry.path, relativeTo: rootURL)
+                relativeEntryURL = .init(filePath: entryPathStr, relativeTo: rootURL)
             } else {
-                relativeEntryURL = .init(fileURLWithPath: entry.path, relativeTo: rootURL)
+                relativeEntryURL = .init(fileURLWithPath: entryPathStr, relativeTo: rootURL)
             }
             
             // パスのコンポーネント配列を渡してルートノードに追加 最初に `/` が入ってしまっているので読み飛ばす
