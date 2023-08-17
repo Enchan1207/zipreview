@@ -27,4 +27,4 @@ jobs:
           destination: platform=macOS,arch=x86_64
         run: |
           if [ $scheme = default ]; then scheme=$(cat default); fi
-          xcodebuild clean build analyze -scheme "$scheme" -configuration $configuration -destination "$destination" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild clean build analyze -scheme "$scheme" -configuration "$configuration" -destination "$destination"
