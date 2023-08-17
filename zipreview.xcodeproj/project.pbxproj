@@ -11,6 +11,7 @@
 		9E054C892A8A148F008B8C69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E054C882A8A148F008B8C69 /* ViewController.swift */; };
 		9E054C8B2A8A1492008B8C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E054C8A2A8A1492008B8C69 /* Assets.xcassets */; };
 		9E054C8E2A8A1492008B8C69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E054C8C2A8A1492008B8C69 /* Main.storyboard */; };
+		9E07EFE72A8DB90500B74578 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9E07EFE62A8DB90500B74578 /* ZIPFoundation */; };
 		9E39C2CB2A8A19850056E14D /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E39C2CA2A8A19850056E14D /* Quartz.framework */; };
 		9E39C2CE2A8A19850056E14D /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E39C2CD2A8A19850056E14D /* PreviewViewController.swift */; };
 		9E39C2D32A8A19850056E14D /* PreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E39C2D12A8A19850056E14D /* PreviewViewController.xib */; };
@@ -18,10 +19,8 @@
 		9E39C2E02A8A5FB90056E14D /* PreviewVC+OutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E39C2DF2A8A5FB90056E14D /* PreviewVC+OutlineView.swift */; };
 		9E39C2E72A8A666B0056E14D /* OutlineCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E39C2E62A8A666B0056E14D /* OutlineCellView.swift */; };
 		9E39C2E92A8A670F0056E14D /* OutlineCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E39C2E82A8A670F0056E14D /* OutlineCellView.xib */; };
-		9E39C2F02A8B19720056E14D /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2EF2A8B19720056E14D /* ZIPFoundation */; };
 		9E39C2F22A8B19720056E14D /* Instantiate in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2F12A8B19720056E14D /* Instantiate */; };
 		9E39C2F42A8B19720056E14D /* InstantiateStandard in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2F32A8B19720056E14D /* InstantiateStandard */; };
-		9E39C2DE2A8A25F90056E14D /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9E39C2DD2A8A25F90056E14D /* ZIPFoundation */; };
 		9E8ABD522A8D8CE300D4860B /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8ABD512A8D8CE300D4860B /* Node.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,8 +81,8 @@
 			files = (
 				9E39C2F42A8B19720056E14D /* InstantiateStandard in Frameworks */,
 				9E39C2CB2A8A19850056E14D /* Quartz.framework in Frameworks */,
-				9E39C2F02A8B19720056E14D /* ZIPFoundation in Frameworks */,
 				9E39C2F22A8B19720056E14D /* Instantiate in Frameworks */,
+				9E07EFE72A8DB90500B74578 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,9 +189,9 @@
 			);
 			name = "ql-extension";
 			packageProductDependencies = (
-				9E39C2EF2A8B19720056E14D /* ZIPFoundation */,
 				9E39C2F12A8B19720056E14D /* Instantiate */,
 				9E39C2F32A8B19720056E14D /* InstantiateStandard */,
+				9E07EFE62A8DB90500B74578 /* ZIPFoundation */,
 			);
 			productName = "ql-extension";
 			productReference = 9E39C2C82A8A19850056E14D /* ql-extension.appex */;
@@ -226,8 +225,8 @@
 			);
 			mainGroup = 9E054C7A2A8A148F008B8C69;
 			packageReferences = (
-				9E39C2942A8A17930056E14D /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 				9E39C2EA2A8B195F0056E14D /* XCRemoteSwiftPackageReference "Instantiate" */,
+				9E07EFE52A8DB90500B74578 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 			);
 			productRefGroup = 9E054C842A8A148F008B8C69 /* Products */;
 			projectDirPath = "";
@@ -361,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -415,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -569,9 +568,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9E39C2942A8A17930056E14D /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+		9E07EFE52A8DB90500B74578 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/weichsel/ZIPFoundation#license";
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.9.16;
@@ -588,9 +587,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9E39C2EF2A8B19720056E14D /* ZIPFoundation */ = {
+		9E07EFE62A8DB90500B74578 /* ZIPFoundation */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9E39C2942A8A17930056E14D /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			package = 9E07EFE52A8DB90500B74578 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
 			productName = ZIPFoundation;
 		};
 		9E39C2F12A8B19720056E14D /* Instantiate */ = {
