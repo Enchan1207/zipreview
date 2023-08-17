@@ -15,15 +15,33 @@ class OutlineCellView: NSTableCellView, NibInstantiatable {
     @IBOutlet weak var entryKindIcon: NSImageView!
     
     /// エントリがリンクかどうかを表すインジケータ
-    @IBOutlet weak var linkIndicator: NSImageView!
+    @IBOutlet weak var linkIndicator: NSImageView! {
+        didSet {
+            linkIndicator.image = .init(systemSymbolName: "arrowshape.turn.up.right.fill", accessibilityDescription: nil)
+        }
+    }
     
     /// エントリ名
     @IBOutlet weak var entryNameLabel: NSTextField!
     
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-
-        // Drawing code here.
+    func configureCell(_ node: Node){
+        setIcon(node.kind)
+        entryNameLabel.stringValue = node.name
+    }
+    
+    private func setIcon(_ kind: Node.Kind){
+        linkIndicator.isHidden = kind != .symlink
+        let imageSymbolName: String = { kind in
+            switch kind {
+            case .file:
+                return "doc"
+            case .directory:
+                return "folder"
+            case .symlink:
+                return "folder"
+            }
+        }(kind)
+        entryKindIcon.image = .init(systemSymbolName: imageSymbolName, accessibilityDescription: nil)
     }
     
 }
