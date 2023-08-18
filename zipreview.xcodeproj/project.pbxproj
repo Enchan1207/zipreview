@@ -12,6 +12,9 @@
 		9E054C8B2A8A1492008B8C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E054C8A2A8A1492008B8C69 /* Assets.xcassets */; };
 		9E054C8E2A8A1492008B8C69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E054C8C2A8A1492008B8C69 /* Main.storyboard */; };
 		9E07EFE72A8DB90500B74578 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9E07EFE62A8DB90500B74578 /* ZIPFoundation */; };
+		9E07F0182A8EF26000B74578 /* EntryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E07F0172A8EF26000B74578 /* EntryInfo.swift */; };
+		9E07F01A2A8EF48700B74578 /* Node+ZipFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E07F0192A8EF48700B74578 /* Node+ZipFoundation.swift */; };
+		9E07F01C2A8EF4B200B74578 /* EntryInfo+ZipFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E07F01B2A8EF4B200B74578 /* EntryInfo+ZipFoundation.swift */; };
 		9E39C2CB2A8A19850056E14D /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E39C2CA2A8A19850056E14D /* Quartz.framework */; };
 		9E39C2CE2A8A19850056E14D /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E39C2CD2A8A19850056E14D /* PreviewViewController.swift */; };
 		9E39C2D32A8A19850056E14D /* PreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E39C2D12A8A19850056E14D /* PreviewViewController.xib */; };
@@ -55,6 +58,9 @@
 		9E054C8A2A8A1492008B8C69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E054C8D2A8A1492008B8C69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E054C8F2A8A1492008B8C69 /* zipreview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = zipreview.entitlements; sourceTree = "<group>"; };
+		9E07F0172A8EF26000B74578 /* EntryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryInfo.swift; sourceTree = "<group>"; };
+		9E07F0192A8EF48700B74578 /* Node+ZipFoundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Node+ZipFoundation.swift"; sourceTree = "<group>"; };
+		9E07F01B2A8EF4B200B74578 /* EntryInfo+ZipFoundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntryInfo+ZipFoundation.swift"; sourceTree = "<group>"; };
 		9E39C2C82A8A19850056E14D /* ql-extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ql-extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E39C2CA2A8A19850056E14D /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		9E39C2CD2A8A19850056E14D /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +141,9 @@
 				9E39C2CD2A8A19850056E14D /* PreviewViewController.swift */,
 				9E39C2DF2A8A5FB90056E14D /* PreviewVC+OutlineView.swift */,
 				9E8ABD512A8D8CE300D4860B /* Node.swift */,
+				9E07F0192A8EF48700B74578 /* Node+ZipFoundation.swift */,
+				9E07F0172A8EF26000B74578 /* EntryInfo.swift */,
+				9E07F01B2A8EF4B200B74578 /* EntryInfo+ZipFoundation.swift */,
 				9E39C2D12A8A19850056E14D /* PreviewViewController.xib */,
 				9E39C2D42A8A19850056E14D /* Info.plist */,
 				9E39C2D52A8A19850056E14D /* ql_extension.entitlements */,
@@ -273,9 +282,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E07F01C2A8EF4B200B74578 /* EntryInfo+ZipFoundation.swift in Sources */,
+				9E07F01A2A8EF48700B74578 /* Node+ZipFoundation.swift in Sources */,
 				9E39C2E72A8A666B0056E14D /* OutlineCellView.swift in Sources */,
 				9E39C2CE2A8A19850056E14D /* PreviewViewController.swift in Sources */,
 				9E39C2E02A8A5FB90056E14D /* PreviewVC+OutlineView.swift in Sources */,
+				9E07F0182A8EF26000B74578 /* EntryInfo.swift in Sources */,
 				9E8ABD522A8D8CE300D4860B /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

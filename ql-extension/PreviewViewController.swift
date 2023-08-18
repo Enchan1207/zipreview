@@ -16,7 +16,7 @@ class PreviewViewController: NSViewController, QLPreviewingController {
     }
     
     /// ルートノード
-    let rootNode = Node(kind: .directory, name: "/")
+    let rootNode = Node(kind: .directory, name: "/", entryInfo: nil)
     
     override var nibName: NSNib.Name? {
         return NSNib.Name("PreviewViewController")
@@ -37,12 +37,6 @@ class PreviewViewController: NSViewController, QLPreviewingController {
         }
     }
     
-
-    override func loadView() {
-        super.loadView()
-        // Do any additional setup after loading the view.
-    }
-    
     func preparePreviewOfFile(at url: URL, completionHandler handler: @escaping (Error?) -> Void) {
         // 読み取りモードでアーカイブを開く
         guard let archive = Archive(url: url, accessMode: .read) else {
@@ -51,20 +45,14 @@ class PreviewViewController: NSViewController, QLPreviewingController {
         }
         
         // アーカイブ内のエントリをすべてルートノードに追加
-        let rootURL = URL(fileURLWithPath: "/")
         archive.forEach { [weak self] entry in
-            // zipファイルをルートとする相対パスを取得
-            let relativeEntryURL: URL
-            let entryPathStr = entry.path(using: .utf8)
+            let entryURL: URL
             if #available(macOS 13, *) {
-                relativeEntryURL = .init(filePath: entryPathStr, relativeTo: rootURL)
+                entryURL = .init(filePath: entry.path(using: .utf8), relativeTo: .init(filePath: "/"))
             } else {
-                relativeEntryURL = .init(fileURLWithPath: entryPathStr, relativeTo: rootURL)
+                entryURL = .init(fileURLWithPath: entry.path(using: .utf8), relativeTo: .init(fileURLWithPath: "/"))
             }
-            
-            // パスのコンポーネント配列を渡してルートノードに追加 最初に `/` が入ってしまっているので読み飛ばす
-            let pathComponents = Array(relativeEntryURL.pathComponents[1...])
-            self?.rootNode.appendChild(pathcomponents: pathComponents, kind: .init(entrytype: entry.type))
+            self?.rootNode.addEntry(entry: entry, destination: entryURL)
         }
         
         outlineView.reloadData()
