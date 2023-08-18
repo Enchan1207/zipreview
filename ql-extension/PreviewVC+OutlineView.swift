@@ -70,9 +70,10 @@ extension PreviewViewController: NSOutlineViewDelegate {
             // いい感じにフォーマットして設定
             let formatter = DateFormatter()
             formatter.calendar = .init(identifier: .gregorian)
-            formatter.locale = .current
+            formatter.locale = Locale(identifier: Locale.preferredLanguages.first!)
             formatter.dateStyle = .long
             modifyDateCellView.infoLabel.stringValue = formatter.string(from: entryInfo.lastModifiedAt)
+            modifyDateCellView.infoLabel.alignment = .left
             return modifyDateCellView
             
         case "origin_size":
