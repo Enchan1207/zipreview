@@ -8,19 +8,18 @@
 import Cocoa
 import Quartz
 import ZIPFoundation
+import Instantiate
 
-class PreviewViewController: NSViewController, QLPreviewingController {
+class PreviewViewController: NSViewController, NibInstantiatable, QLPreviewingController {
     
+    /// プレビュー準備中に発生したエラー
     enum PreviewError: Error {
+        ///ファイルを開けなかった
         case fileOpenFailed
     }
     
     /// ルートノード
     let rootNode = Node(kind: .directory, name: "/", entryInfo: nil)
-    
-    override var nibName: NSNib.Name? {
-        return NSNib.Name("PreviewViewController")
-    }
     
     @IBOutlet weak var outlineView: NSOutlineView! {
         didSet{
@@ -34,7 +33,8 @@ class PreviewViewController: NSViewController, QLPreviewingController {
             outlineView.allowsMultipleSelection = false
             outlineView.floatsGroupRows = false
             
-            outlineView.register(OutlineCellView.nib, forIdentifier: .init(rawValue: .init(describing: OutlineCellView.self)))
+            outlineView.register(FileNameCellView.nib, forIdentifier: .init(rawValue: .init(describing: FileNameCellView.self)))
+            outlineView.register(FileInfoCellView.nib, forIdentifier: .init(rawValue: .init(describing: FileInfoCellView.self)))
         }
     }
     

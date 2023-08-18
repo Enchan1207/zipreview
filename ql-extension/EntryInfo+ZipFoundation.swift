@@ -13,8 +13,9 @@ extension EntryInfo {
     /// Zipエントリの情報をもとに初期化
     /// - Parameter entry: エントリ
     init?(_ entry: Entry){
+        guard entry.type == .file else {return nil}
+        
         // 作成日と更新日どっちかはあるはず
-        NSLog("attr: %@", "\(entry.fileAttributes)")
         let createdAt = entry.fileAttributes[.creationDate] as? Date
         let modifiedAt = entry.fileAttributes[.modificationDate] as? Date
         guard createdAt != nil || modifiedAt != nil else {return nil}
