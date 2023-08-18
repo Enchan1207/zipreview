@@ -24,14 +24,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="735" height="272"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" headerView="hM8-hW-M3m" viewBased="YES" indentationPerLevel="13" outlineTableColumn="mp7-1b-QWT" id="gRE-2p-fn3">
+                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="sequential" tableStyle="inset" alternatingRowBackgroundColors="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" headerView="hM8-hW-M3m" viewBased="YES" indentationPerLevel="13" autoresizesOutlineColumn="YES" outlineTableColumn="mp7-1b-QWT" id="gRE-2p-fn3">
                                 <rect key="frame" x="0.0" y="0.0" width="735" height="244"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <size key="intercellSpacing" width="3" height="0.0"/>
-                                <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <size key="intercellSpacing" width="17" height="0.0"/>
+                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn identifier="name" width="250" minWidth="13" maxWidth="3.4028234663852886e+38" id="mp7-1b-QWT">
+                                    <tableColumn identifier="name" width="200" minWidth="13" maxWidth="3.4028234663852886e+38" id="mp7-1b-QWT">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Name">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,7 +44,7 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="X2Z-Q3-Do3">
-                                                <rect key="frame" x="11" y="0.0" width="255" height="17"/>
+                                                <rect key="frame" x="18" y="0.0" width="198" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </tableCellView>
                                         </prototypeCellViews>
@@ -62,7 +62,7 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="0DQ-qL-XHz">
-                                                <rect key="frame" x="269" y="0.0" width="110" height="17"/>
+                                                <rect key="frame" x="233" y="0.0" width="110" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </tableCellView>
                                         </prototypeCellViews>
@@ -80,7 +80,7 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="VfS-0l-qgI">
-                                                <rect key="frame" x="382" y="0.0" width="110" height="17"/>
+                                                <rect key="frame" x="360" y="0.0" width="110" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </tableCellView>
                                         </prototypeCellViews>
@@ -98,12 +98,12 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="thn-Cz-wd4">
-                                                <rect key="frame" x="495" y="0.0" width="110" height="17"/>
+                                                <rect key="frame" x="487" y="0.0" width="110" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </tableCellView>
                                         </prototypeCellViews>
                                     </tableColumn>
-                                    <tableColumn identifier="compress_rate" width="110" minWidth="10" maxWidth="3.4028234663852886e+38" id="z69-tS-s9p">
+                                    <tableColumn identifier="compress_rate" width="80" minWidth="10" maxWidth="3.4028234663852886e+38" id="z69-tS-s9p">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Compress%">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -116,7 +116,7 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="icN-OD-HQF">
-                                                <rect key="frame" x="608" y="0.0" width="114" height="17"/>
+                                                <rect key="frame" x="614" y="0.0" width="77" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </tableCellView>
                                         </prototypeCellViews>
