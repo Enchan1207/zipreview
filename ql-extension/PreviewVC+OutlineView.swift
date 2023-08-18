@@ -75,8 +75,8 @@ extension PreviewViewController: NSOutlineViewDelegate {
             modifyDateCellView.infoLabel.stringValue = formatter.string(from: entryInfo.lastModifiedAt)
             return modifyDateCellView
             
-        case "size":
-            // 展開後のファイルサイズ
+        case "origin_size":
+            // 圧縮前のファイルサイズ
             guard let originSizeCellView = outlineView.makeView(withIdentifier: .init(.init(describing: FileInfoCellView.self)), owner: self) as? FileInfoCellView,
                   let entryInfo = node.entryInfo else {return nil}
             
@@ -85,6 +85,19 @@ extension PreviewViewController: NSOutlineViewDelegate {
             formatter.allowedUnits = .useAll
             formatter.countStyle = .file
             originSizeCellView.infoLabel.stringValue = formatter.string(fromByteCount: .init(entryInfo.uncompressedSize))
+            originSizeCellView.infoLabel.alignment = .right
+            return originSizeCellView
+
+        case "compressed_size":
+            // 圧縮後のファイルサイズ
+            guard let originSizeCellView = outlineView.makeView(withIdentifier: .init(.init(describing: FileInfoCellView.self)), owner: self) as? FileInfoCellView,
+                  let entryInfo = node.entryInfo else {return nil}
+            
+            // いい感じにフォーマットして設定
+            let formatter = ByteCountFormatter()
+            formatter.allowedUnits = .useAll
+            formatter.countStyle = .file
+            originSizeCellView.infoLabel.stringValue = formatter.string(fromByteCount: .init(entryInfo.compressedSize))
             originSizeCellView.infoLabel.alignment = .right
             return originSizeCellView
             
