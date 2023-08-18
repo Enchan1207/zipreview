@@ -30,7 +30,8 @@ class PreviewViewController: NSViewController, QLPreviewingController {
             outlineView.autosaveExpandedItems = false
             outlineView.autosaveTableColumns = false
             
-            outlineView.selectionHighlightStyle = .regular
+            outlineView.allowsEmptySelection = true
+            outlineView.allowsMultipleSelection = false
             outlineView.floatsGroupRows = false
             
             outlineView.register(OutlineCellView.nib, forIdentifier: .init(rawValue: .init(describing: OutlineCellView.self)))
