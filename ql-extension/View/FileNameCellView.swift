@@ -1,5 +1,5 @@
 //
-//  OutlineCellView.swift
+//  FileNameCellView.swift
 //  ql-extension
 //
 //  Created by EnchantCode on 2023/08/14.
@@ -9,7 +9,7 @@ import Cocoa
 import Instantiate
 import InstantiateStandard
 
-class OutlineCellView: NSTableCellView, NibInstantiatable {
+class FileNameCellView: NSTableCellView, NibInstantiatable {
     
     /// エントリの種類 (file/directory/symlink) を表すアイコン
     @IBOutlet weak var entryKindIcon: NSImageView!

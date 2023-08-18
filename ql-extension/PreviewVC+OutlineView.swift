@@ -50,9 +50,74 @@ extension PreviewViewController: NSOutlineViewDelegate {
     
     // 各アイテムのビュー構成
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
-        guard let cellView = outlineView.makeView(withIdentifier: .init(.init(describing: OutlineCellView.self)), owner: self) as? OutlineCellView else {return nil}
-        cellView.configureCell(item as! Node)
-        return cellView
+        guard let columnID = tableColumn?.identifier.rawValue,
+              let node = item as? Node else {return nil}
+        
+        // カラムの識別子で分岐
+        switch columnID {
+            
+        case "name":
+            // ファイル種別と名前
+            guard let nameCellView = outlineView.makeView(withIdentifier: .init(.init(describing: FileNameCellView.self)), owner: self) as? FileNameCellView else {return nil}
+            nameCellView.configureCell(node)
+            return nameCellView
+            
+        case "modified_at":
+            // 最終更新日
+            guard let modifyDateCellView = outlineView.makeView(withIdentifier: .init(.init(describing: FileInfoCellView.self)), owner: self) as? FileInfoCellView,
+                  let entryInfo = node.entryInfo else {return nil}
+            
+            // いい感じにフォーマットして設定
+            let formatter = DateFormatter()
+            formatter.calendar = .init(identifier: .gregorian)
+            formatter.locale = Locale(identifier: Locale.preferredLanguages.first!)
+            formatter.dateStyle = .long
+            modifyDateCellView.infoLabel.stringValue = formatter.string(from: entryInfo.lastModifiedAt)
+            modifyDateCellView.infoLabel.alignment = .left
+            return modifyDateCellView
+            
+        case "origin_size":
+            // 圧縮前のファイルサイズ
+            guard let originSizeCellView = outlineView.makeView(withIdentifier: .init(.init(describing: FileInfoCellView.self)), owner: self) as? FileInfoCellView,
+                  let entryInfo = node.entryInfo else {return nil}
+            
+            // いい感じにフォーマットして設定
+            let formatter = ByteCountFormatter()
+            formatter.allowedUnits = .useAll
+            formatter.countStyle = .file
+            originSizeCellView.infoLabel.stringValue = formatter.string(fromByteCount: .init(entryInfo.uncompressedSize))
+            originSizeCellView.infoLabel.alignment = .right
+            return originSizeCellView
+
+        case "compressed_size":
+            // 圧縮後のファイルサイズ
+            guard let originSizeCellView = outlineView.makeView(withIdentifier: .init(.init(describing: FileInfoCellView.self)), owner: self) as? FileInfoCellView,
+                  let entryInfo = node.entryInfo else {return nil}
+            
+            // いい感じにフォーマットして設定
+            let formatter = ByteCountFormatter()
+            formatter.allowedUnits = .useAll
+            formatter.countStyle = .file
+            originSizeCellView.infoLabel.stringValue = formatter.string(fromByteCount: .init(entryInfo.compressedSize))
+            originSizeCellView.infoLabel.alignment = .right
+            return originSizeCellView
+            
+        case "compress_rate":
+            // 圧縮比
+            guard let compressRateCellView = outlineView.makeView(withIdentifier: .init(.init(describing: FileInfoCellView.self)), owner: self) as? FileInfoCellView,
+                  let entryInfo = node.entryInfo else {return nil}
+            let compressRate = 1.0 - Double(entryInfo.compressedSize) / Double(entryInfo.uncompressedSize)
+            
+            // いい感じにフォーマットして設定
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .percent
+            compressRateCellView.infoLabel.stringValue = formatter.string(from: .init(value: compressRate))!
+            compressRateCellView.infoLabel.alignment = .right
+            return compressRateCellView
+            
+        default:
+            return nil
+        }
     }
     
     // アイテム選択の可否

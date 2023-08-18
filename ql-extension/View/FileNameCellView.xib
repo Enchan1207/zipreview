@@ -10,7 +10,7 @@
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="c22-O7-iKe" customClass="OutlineCellView" customModule="ql_extension" customModuleProvider="target">
+        <customView id="c22-O7-iKe" customClass="FileNameCellView" customModule="ql_extension" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="471" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -21,7 +21,7 @@
                             <rect key="frame" x="0.0" y="5" width="20" height="20"/>
                             <subviews>
                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I1I-Sw-WFT" userLabel="file icon">
-                                    <rect key="frame" x="0.0" y="-4.5" width="20.5" height="29"/>
+                                    <rect key="frame" x="0.0" y="-4" width="20" height="28"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="I1I-Sw-WFT" secondAttribute="height" multiplier="1:1" id="BAl-p0-1G4"/>
                                     </constraints>
@@ -30,7 +30,7 @@
                                     </imageCell>
                                 </imageView>
                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wBr-od-au6" userLabel="symlink mark">
-                                    <rect key="frame" x="0.0" y="-2.5" width="10.5" height="15"/>
+                                    <rect key="frame" x="0.0" y="-2" width="10" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="10" id="l0z-Gq-qPO"/>
                                         <constraint firstAttribute="width" secondItem="wBr-od-au6" secondAttribute="height" multiplier="1:1" id="sb4-Ko-UTU"/>
@@ -83,6 +83,6 @@
     </objects>
     <resources>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="17" height="14"/>
-        <image name="folder" catalog="system" width="23" height="18"/>
+        <image name="folder" catalog="system" width="23" height="17"/>
     </resources>
 </document>
